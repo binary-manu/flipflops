@@ -1,0 +1,6 @@
+srsim.exe : srsim.c
+	tcc.exe $* GRAPHICS.LIB
+
+clean:
+	-del *.EXE
+	-del *.OBJ

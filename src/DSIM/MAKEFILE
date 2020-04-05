@@ -1,0 +1,6 @@
+dsim.exe : dsim.c
+	tcc.exe $* GRAPHICS.LIB
+
+clean:
+	-del *.EXE
+	-del *.OBJ

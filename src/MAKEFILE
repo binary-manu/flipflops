@@ -1,0 +1,28 @@
+ENTER = cd
+MAKE  = make
+LEAVE = cd ..
+BUILDDIR = w:
+
+build: srsim dsim
+	-del $(BUILDDIR)\*.EXE
+	-del $(BUILDDIR)\*.BGI
+	copy srsim\srsim.exe $(BUILDDIR)
+        copy t:\bgi.cfg $(BUILDDIR)\srsimcfg.bgi
+	copy dsim\dsim.exe $(BUILDDIR)
+        copy t:\bgi.cfg $(BUILDDIR)\dsimcfg.bgi
+        copy t:\turboc\egavga.bgi $(BUILDDIR)
+
+srsim dsim:
+	$(ENTER) $<
+	$(MAKE)
+	$(LEAVE)
+
+clean:
+	-del $(BUILDDIR)\*.EXE
+	-del $(BUILDDIR)\*.BGI
+	$(ENTER) srsim
+	$(MAKE) clean
+	$(LEAVE)
+	$(ENTER) dsim
+	$(MAKE) clean
+	$(LEAVE)
