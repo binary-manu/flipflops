@@ -2,8 +2,8 @@
 #define DOWN_ARROW 'P'
 #define F1 59
 
-void DrawFrame(short, short, short, short, const char * const);
-void DrawFrame(short x1, short y1, short x2, short y2, const char * const msg)
+void DrawFrame(short, short, short, short, char * const);
+void DrawFrame(short x1, short y1, short x2, short y2, char * const msg)
 {
 	unsigned short l;
 	line(x1, y1+3, x1, y2);
